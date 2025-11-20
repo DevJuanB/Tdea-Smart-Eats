@@ -1,0 +1,5 @@
+{
+  "name": "TDEA Eats Smart",
+  "description": "A smart food ordering prototype for TDEA students featuring pickup scheduling, rescue meals, and profile customization.",
+  "requestFramePermissions": []
+}
