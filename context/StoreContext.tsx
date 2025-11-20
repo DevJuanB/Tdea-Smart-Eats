@@ -15,7 +15,7 @@ interface StoreContextType {
   clearCart: () => void;
   login: (name: string, email: string, isGuest?: boolean) => void;
   logout: () => void;
-  placeOrder: (pickupTime: string) => void;
+  placeOrder: (pickupTime: string) => { code: string; earnedCoins: number } | undefined;
   updateProductStock: (productId: string, newStock: number) => void;
   updateUserPreferences: (prefs: User['preferences']) => void;
 }

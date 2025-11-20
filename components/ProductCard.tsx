@@ -1,5 +1,5 @@
 import React from 'react';
-import { Plus, Tag } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import { Product } from '../types';
 import { useStore } from '../context/StoreContext';
 
@@ -65,7 +65,7 @@ const ProductCard: React.FC<Props> = ({ product, compact = false }) => {
                 ${product.originalPrice.toLocaleString()}
               </span>
             )}
-            <span className="font-bold text-tdea-orange">
+            <span className="font-bold text-brand-green">
               ${product.price.toLocaleString()}
             </span>
           </div>
@@ -76,7 +76,7 @@ const ProductCard: React.FC<Props> = ({ product, compact = false }) => {
             className={`p-2 rounded-full shadow-sm transition-colors ${
               product.stock === 0 
                 ? 'bg-gray-200 text-gray-400 cursor-not-allowed' 
-                : 'bg-tdea-orange text-white hover:bg-orange-600 active:scale-95'
+                : 'bg-brand-green text-white hover:bg-green-700 active:scale-95'
             }`}
           >
             <Plus size={18} />

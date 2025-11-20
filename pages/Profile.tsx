@@ -19,19 +19,19 @@ const Profile: React.FC = () => {
   };
 
   return (
-    <div className="pb-24 bg-gray-50 min-h-screen animate-fade-in">
+    <div className="pb-24 bg-green-50 min-h-screen animate-fade-in">
       {/* Header Profile */}
       <div className="bg-white p-6 shadow-sm mb-4">
         <div className="flex items-center gap-4 mb-6">
-          <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+          <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-brand-green rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
             {user.name.charAt(0)}
           </div>
           <div>
             <h1 className="text-xl font-bold text-gray-900">{user.name}</h1>
             <p className="text-sm text-gray-500">{user.email}</p>
-            <div className="flex items-center gap-1 mt-1 text-amber-600 bg-amber-50 px-2 py-0.5 rounded-md w-fit">
+            <div className="flex items-center gap-1 mt-1 text-yellow-600 bg-yellow-50 px-2 py-0.5 rounded-md w-fit">
               <Award size={14} />
-              <span className="text-xs font-bold">{user.coins} TDEA Coins</span>
+              <span className="text-xs font-bold">{user.coins} Coins</span>
             </div>
           </div>
         </div>
@@ -39,7 +39,7 @@ const Profile: React.FC = () => {
         {/* Progress Bar */}
         <div className="bg-gray-100 rounded-full h-2 w-full mb-2 overflow-hidden">
           <div 
-            className="bg-amber-500 h-full rounded-full transition-all duration-1000" 
+            className="bg-yellow-500 h-full rounded-full transition-all duration-1000" 
             style={{ width: `${(user.coins % 1000) / 10}%` }}
           ></div>
         </div>
@@ -50,13 +50,13 @@ const Profile: React.FC = () => {
       <div className="flex bg-white border-b border-gray-200 mb-4">
         <button 
           onClick={() => setActiveTab('profile')}
-          className={`flex-1 py-3 text-sm font-medium border-b-2 ${activeTab === 'profile' ? 'border-tdea-orange text-tdea-orange' : 'border-transparent text-gray-500'}`}
+          className={`flex-1 py-3 text-sm font-medium border-b-2 ${activeTab === 'profile' ? 'border-brand-green text-brand-green' : 'border-transparent text-gray-500'}`}
         >
           Preferencias
         </button>
         <button 
           onClick={() => setActiveTab('history')}
-          className={`flex-1 py-3 text-sm font-medium border-b-2 ${activeTab === 'history' ? 'border-tdea-orange text-tdea-orange' : 'border-transparent text-gray-500'}`}
+          className={`flex-1 py-3 text-sm font-medium border-b-2 ${activeTab === 'history' ? 'border-brand-green text-brand-green' : 'border-transparent text-gray-500'}`}
         >
           Historial
         </button>
@@ -76,7 +76,7 @@ const Profile: React.FC = () => {
                   onClick={() => handleRestrictionToggle(r)}
                   className={`px-3 py-2 rounded-lg text-xs font-medium border transition-all ${
                     user.preferences.restrictions.includes(r)
-                      ? 'bg-orange-50 border-tdea-orange text-tdea-orange'
+                      ? 'bg-green-50 border-brand-green text-brand-green'
                       : 'bg-white border-gray-200 text-gray-600'
                   }`}
                 >
@@ -124,7 +124,7 @@ const Profile: React.FC = () => {
                         <span>${(item.price * item.quantity).toLocaleString()}</span>
                       </div>
                     ))}
-                    <div className="flex justify-between font-bold text-sm mt-2 text-tdea-orange">
+                    <div className="flex justify-between font-bold text-sm mt-2 text-brand-green">
                        <span>Total</span>
                        <span>${(order.total + 500).toLocaleString()}</span>
                     </div>

@@ -27,25 +27,25 @@ const Home: React.FC = () => {
             <p className="text-xs text-gray-500 font-medium">Hola, {user?.name.split(' ')[0]}</p>
             <h2 className="text-xl font-bold text-gray-800">¿Qué quieres comer hoy?</h2>
           </div>
-          <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
-            <span className="text-tdea-orange font-bold text-lg">{user?.name.charAt(0)}</span>
+          <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+            <span className="text-brand-green font-bold text-lg">{user?.name.charAt(0)}</span>
           </div>
         </div>
       </div>
 
       {/* Pickup Express Banner */}
       <div className="px-4 mt-4">
-        <div className="bg-gradient-to-r from-tdea-dark to-gray-800 rounded-2xl p-4 flex items-center justify-between shadow-lg text-white">
+        <div className="bg-gradient-to-r from-brand-dark to-gray-800 rounded-2xl p-4 flex items-center justify-between shadow-lg text-white">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <Clock size={16} className="text-tdea-orange" />
+              <Clock size={16} className="text-brand-green" />
               <span className="font-bold text-sm">Pickup Express</span>
             </div>
             <p className="text-xs text-gray-300 max-w-[200px]">Pide antes de las 10:00 AM y recibe 15% OFF extra en combos.</p>
           </div>
           <button 
             onClick={() => navigate('/menu')}
-            className="bg-tdea-orange px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-orange-600 transition-colors"
+            className="bg-brand-green px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-green-600 transition-colors text-white"
           >
             Ver Menú
           </button>
@@ -67,7 +67,7 @@ const Home: React.FC = () => {
               <div className="h-32 overflow-hidden relative">
                 <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
                 <div className="absolute top-2 right-2 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg shadow-sm">
-                  <span className="text-sm font-bold text-tdea-orange">${product.price.toLocaleString()}</span>
+                  <span className="text-sm font-bold text-brand-green">${product.price.toLocaleString()}</span>
                 </div>
               </div>
               <div className="p-3">
@@ -75,7 +75,7 @@ const Home: React.FC = () => {
                 <p className="text-xs text-gray-500 line-clamp-1 mt-1">{product.description}</p>
                 <button 
                    onClick={() => addToCart(product)}
-                   className="w-full mt-3 bg-orange-50 text-tdea-orange font-semibold py-2 rounded-lg text-sm hover:bg-orange-100 transition-colors"
+                   className="w-full mt-3 bg-green-50 text-brand-green font-semibold py-2 rounded-lg text-sm hover:bg-green-100 transition-colors"
                 >
                   Agregar al pedido
                 </button>
@@ -89,7 +89,7 @@ const Home: React.FC = () => {
       <div className="mt-2 px-4">
         <div className="flex justify-between items-center mb-3">
           <h3 className="font-bold text-lg text-gray-800">Recomendado para ti</h3>
-          <button onClick={() => navigate('/menu')} className="text-tdea-orange text-xs font-semibold flex items-center">
+          <button onClick={() => navigate('/menu')} className="text-brand-green text-xs font-semibold flex items-center">
             Ver todo <ArrowRight size={12} className="ml-1" />
           </button>
         </div>
@@ -105,14 +105,13 @@ const Home: React.FC = () => {
       <div className="fixed bottom-20 right-4 z-40">
         <button 
           onClick={() => navigate('/menu')}
-          className="bg-tdea-orange text-white p-4 rounded-full shadow-lg shadow-orange-500/30 hover:scale-105 transition-transform flex items-center gap-2 font-bold pr-6"
+          className="bg-brand-green text-white p-4 rounded-full shadow-lg shadow-green-500/30 hover:scale-105 transition-transform flex items-center gap-2 font-bold pr-6"
         >
           <ShoppingBag className="fill-white" size={24} />
           <span className="text-sm">Pedir Ya</span>
         </button>
       </div>
       
-      {/* Shopping Bag Icon for generic import use */}
       <div className="hidden"><ShoppingBag /></div> 
     </div>
   );

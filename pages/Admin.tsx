@@ -25,13 +25,13 @@ const Admin: React.FC = () => {
       <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center p-6">
         <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-sm">
           <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-            <Lock className="text-tdea-orange" /> Acceso Cajera/Admin
+            <Lock className="text-brand-green" /> Acceso Cajera/Admin
           </h2>
           <form onSubmit={handleLogin}>
             <input
               type="password"
               placeholder="Contraseña"
-              className="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-tdea-orange"
+              className="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-brand-green"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -40,7 +40,7 @@ const Admin: React.FC = () => {
                 <button type="button" onClick={() => navigate('/profile')} className="flex-1 py-3 bg-gray-100 text-gray-700 rounded-lg font-semibold">
                     Volver
                 </button>
-                <button type="submit" className="flex-1 py-3 bg-tdea-orange text-white rounded-lg font-semibold">
+                <button type="submit" className="flex-1 py-3 bg-brand-green text-white rounded-lg font-semibold hover:bg-green-700">
                     Ingresar
                 </button>
             </div>

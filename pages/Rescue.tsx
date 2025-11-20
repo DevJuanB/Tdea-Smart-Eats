@@ -37,10 +37,10 @@ const Rescue: React.FC = () => {
 
   if (!canRescue) {
     return (
-      <div className="min-h-screen bg-orange-50 flex flex-col items-center justify-center p-8 text-center pb-24 animate-fade-in">
+      <div className="min-h-screen bg-green-50 flex flex-col items-center justify-center p-8 text-center pb-24 animate-fade-in">
         <div className="bg-white p-8 rounded-3xl shadow-xl w-full max-w-sm">
-          <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Clock className="text-tdea-orange" size={32} />
+          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Clock className="text-brand-green" size={32} />
           </div>
           <h2 className="text-2xl font-bold text-gray-800 mb-2">¡Aún es temprano!</h2>
           <p className="text-gray-500 mb-6 text-sm">
@@ -61,7 +61,7 @@ const Rescue: React.FC = () => {
   }
 
   return (
-    <div className="pb-24 bg-gray-50 min-h-screen animate-fade-in">
+    <div className="pb-24 bg-green-50 min-h-screen animate-fade-in">
       <div className="bg-red-500 p-6 text-white sticky top-0 z-10 shadow-md rounded-b-3xl">
         <div className="flex items-center gap-2 mb-2">
           <AlertCircle className="fill-white text-red-500" />

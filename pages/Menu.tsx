@@ -60,13 +60,13 @@ const Menu: React.FC = () => {
             <input 
               type="text"
               placeholder="Buscar comida, bebida..."
-              className="w-full pl-10 pr-12 py-2.5 bg-gray-100 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-tdea-orange/50"
+              className="w-full pl-10 pr-12 py-2.5 bg-gray-100 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-green/50"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
             <button 
               onClick={() => setShowFilters(!showFilters)}
-              className={`absolute right-2 top-1.5 p-1.5 rounded-lg ${showFilters ? 'bg-tdea-orange text-white' : 'bg-white text-gray-500'}`}
+              className={`absolute right-2 top-1.5 p-1.5 rounded-lg ${showFilters ? 'bg-brand-green text-white' : 'bg-white text-gray-500'}`}
             >
               <SlidersHorizontal size={18} />
             </button>
@@ -91,7 +91,7 @@ const Menu: React.FC = () => {
               onClick={() => setActiveCategory(cat)}
               className={`py-3 px-4 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
                 activeCategory === cat 
-                  ? 'border-tdea-orange text-tdea-orange' 
+                  ? 'border-brand-green text-brand-green' 
                   : 'border-transparent text-gray-500 hover:text-gray-700'
               }`}
             >
@@ -110,7 +110,7 @@ const Menu: React.FC = () => {
         ) : (
           <div className="col-span-2 py-10 text-center">
             <p className="text-gray-500">No encontramos productos :(</p>
-            <button onClick={() => {setSearchQuery(''); setActiveFilter('all');}} className="mt-2 text-tdea-orange font-medium text-sm">Limpiar filtros</button>
+            <button onClick={() => {setSearchQuery(''); setActiveFilter('all');}} className="mt-2 text-brand-green font-medium text-sm">Limpiar filtros</button>
           </div>
         )}
       </div>
@@ -122,7 +122,7 @@ const FilterChip = ({ label, active, onClick }: { label: string, active: boolean
   <button
     onClick={onClick}
     className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
-      active ? 'bg-gray-800 text-white' : 'bg-gray-100 text-gray-600 border border-gray-200'
+      active ? 'bg-brand-dark text-white' : 'bg-gray-100 text-gray-600 border border-gray-200'
     }`}
   >
     {label}

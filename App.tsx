@@ -14,11 +14,11 @@ import Profile from './pages/Profile';
 import Admin from './pages/Admin';
 
 // Protected Route Component
-const ProtectedRoute = ({ children }: { children: React.ReactElement }) => {
+const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { user, isLoading } = useStore();
-  if (isLoading) return <div className="h-screen flex items-center justify-center bg-orange-50">Cargando...</div>;
+  if (isLoading) return <div className="h-screen flex items-center justify-center bg-green-50 text-brand-green font-bold">Cargando...</div>;
   if (!user) return <Navigate to="/login" replace />;
-  return children;
+  return <>{children}</>;
 };
 
 const AppRoutes = () => {

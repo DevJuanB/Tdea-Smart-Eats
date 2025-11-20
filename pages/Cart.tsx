@@ -51,12 +51,12 @@ const Cart: React.FC = () => {
 
           <div className="flex items-center justify-center gap-2 text-yellow-600 bg-yellow-50 p-3 rounded-lg mb-6">
             <span className="text-xl">🪙</span>
-            <span className="font-bold">+{orderSuccess.coins} TDEA Coins ganadas</span>
+            <span className="font-bold">+{orderSuccess.coins} Coins ganadas</span>
           </div>
 
           <button 
             onClick={() => { setOrderSuccess(null); navigate('/'); }}
-            className="w-full py-3 bg-tdea-orange text-white font-bold rounded-xl shadow-lg hover:bg-orange-600 transition-colors"
+            className="w-full py-3 bg-brand-green text-white font-bold rounded-xl shadow-lg hover:bg-green-700 transition-colors"
           >
             Volver al Inicio
           </button>
@@ -68,14 +68,14 @@ const Cart: React.FC = () => {
   if (cart.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center h-[80vh] p-6 text-center">
-        <div className="w-24 h-24 bg-orange-50 rounded-full flex items-center justify-center mb-4">
-          <CreditCard className="text-tdea-orange/50" size={40} />
+        <div className="w-24 h-24 bg-green-50 rounded-full flex items-center justify-center mb-4">
+          <CreditCard className="text-brand-green/50" size={40} />
         </div>
         <h2 className="text-xl font-bold text-gray-800 mb-2">Tu carrito está vacío</h2>
         <p className="text-gray-500 mb-6 max-w-xs">Parece que aún no has elegido tu comida de hoy.</p>
         <button 
           onClick={() => navigate('/menu')}
-          className="px-8 py-3 bg-tdea-orange text-white font-bold rounded-xl shadow-md hover:bg-orange-600"
+          className="px-8 py-3 bg-brand-green text-white font-bold rounded-xl shadow-md hover:bg-green-700"
         >
           Ir al Menú
         </button>
@@ -95,7 +95,7 @@ const Cart: React.FC = () => {
             <img src={item.image} alt={item.name} className="w-16 h-16 rounded-lg object-cover" />
             <div className="flex-grow">
               <h3 className="font-semibold text-sm text-gray-800">{item.name}</h3>
-              <p className="text-tdea-orange font-bold text-sm">${(item.price * item.quantity).toLocaleString()}</p>
+              <p className="text-brand-green font-bold text-sm">${(item.price * item.quantity).toLocaleString()}</p>
             </div>
             <div className="flex items-center gap-3 bg-gray-50 rounded-lg p-1 border border-gray-100">
               <button onClick={() => updateCartQuantity(item.id, -1)} className="p-1 hover:bg-white rounded-md transition-colors">
@@ -115,7 +115,7 @@ const Cart: React.FC = () => {
         {/* Time Selector */}
         <div className="bg-white p-4 rounded-xl shadow-sm mt-6">
           <div className="flex items-center gap-2 mb-3 text-gray-800 font-semibold">
-            <Clock size={18} className="text-tdea-orange" />
+            <Clock size={18} className="text-brand-green" />
             <h3>Hora de Recogida</h3>
           </div>
           <div className="grid grid-cols-4 gap-2">
@@ -125,7 +125,7 @@ const Cart: React.FC = () => {
                 onClick={() => setPickupTime(time)}
                 className={`py-2 text-xs font-medium rounded-lg border transition-all ${
                   pickupTime === time 
-                    ? 'bg-orange-50 border-tdea-orange text-tdea-orange' 
+                    ? 'bg-green-50 border-brand-green text-brand-green' 
                     : 'bg-white border-gray-200 text-gray-600'
                 }`}
               >
@@ -147,7 +147,7 @@ const Cart: React.FC = () => {
           </div>
           <div className="border-t border-gray-100 my-2 pt-2 flex justify-between font-bold text-lg">
             <span>Total</span>
-            <span className="text-tdea-orange">${(total + 500).toLocaleString()}</span>
+            <span className="text-brand-green">${(total + 500).toLocaleString()}</span>
           </div>
         </div>
       </div>
